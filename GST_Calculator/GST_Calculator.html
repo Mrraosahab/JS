@@ -1,0 +1,131 @@
+<!-- Creating a simpe GST calculator here
+languages are used in this web page
+1. Html5
+2. CSS3
+3. JavaScript 
+This small project is created for fun and practice purpose only.
+Not any software required here, excluding text editor(I used VS Code)
+For any doubt and complain please contact me here: pkyadav3444@gmail.com 
+Twitter handle: https://twitter.com/mrraosahab -->
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GST Calculator</title>
+</head>
+
+<body>
+
+    <!-- container starts here -->
+    <div id="container">
+        <!-- image and Heading starts here -->
+        <img src="logo.png" width="180">
+        <h1 class="head">GST Calculator</h1>
+        <!-- image and heading ends here -->
+
+
+        <!-- input, output and button section starts here -->
+        <div id="section">
+            <b>Amount:</b> <input class="input" type="text" name="num" id="num" placeholder="Your Amount">
+            <b>GST Charge:</b> <input class="input" type="text" name="gst" id="gst" placeholder="Your GST Charge">
+            <input class="btn" type="button" name="btn" id="btn" value="Calculate GST"
+                onclick="pressbtn(this.form)"><br><br><br>
+
+            <b>GST Amount:</b> <input class="input" type="text" name="gst_amt" id="gst_amt"
+                placeholder="Calculated GST Amount">
+            <b>Total Amount:</b> <input class="input" type="text" name="net_amt" id="net_amt"
+                placeholder="Calculated Total Amount">
+
+
+        </div>
+        <!-- section end here -->
+
+        <!-- footer starts here -->
+        <footer class="footer">
+            <p class="para">Designed by: <a href="https://www.linkedin.com/in/mr-rao/" target="_blank">Pradeep</a></p>
+            <!-- you can add more links and other contains about your company here, like address, about, contact form, subscription form, phone number, Developer's name, etc -->
+        </footer>
+        <!-- footer ends here -->
+    </div>
+    <!-- container ends here -->
+
+    <!-- JavaScript starts here -->
+    <script>
+        // function name "pressbtn" available in button input are created here 
+        function pressbtn(num, gst) {
+            // getting amount value here from input method named "Amount" and stored in "amt" named variable
+            let amt = document.getElementById("num").value;
+            // getting gst charge from input method named "GST Charge" and stored in "gstm" variable
+            let gstm = document.getElementById("gst").value;
+            // calculating GST Amount and stored in variable named "gst_amt"
+            let gst_amt = amt * gstm / 100;
+            // adding Amount in GST Amount and stored in variable named "net_amt"
+            let net_amt = parseFloat(amt) + parseFloat(amt * gstm / 100);
+            // assigning gst_amt to "GST Amount" named input function
+            document.getElementById("gst_amt").value = gst_amt;
+            // assigning "net_amt" to "Total Amount" named function
+            document.getElementById("net_amt").value = net_amt;
+        }
+    </script>
+    <!-- JavaScript ends here -->
+
+
+
+
+    <!-- CSS style starts here -->
+    <style type="text/css">
+        body {
+            background-color: #0000ff;
+        }
+
+        .para {
+            font-size: 20px;
+            color: white;
+        }
+
+        a {
+            text-decoration: none;
+            color: white;
+        }
+
+        .head {
+            font-size: 50px;
+            color: white;
+            font-size: 60px;
+        }
+
+        #container {
+            text-align: center;
+        }
+
+        #section {
+            background-color: chartreuse;
+            margin-top: 50px;
+            padding-top: 20px;
+            padding-bottom: 20px;
+        }
+
+        .input {
+            font-size: 30px;
+            border: white;
+        }
+
+        .btn {
+            font-size: 30px;
+            background-color: blue;
+            color: white;
+        }
+
+        .footer {
+            margin-top: 90px;
+        }
+    </style>
+    <!-- CSS styel ends here -->
+</body>
+
+</html>
